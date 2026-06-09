@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>OAuth Assignment</title>
+</head>
+<body>
+
+<h1>Spring Boot OAuth2 Login</h1>
+
+<div th:if="${name == null}">
+    <a href="/oauth2/authorization/github">
+        Login With GitHub
+    </a>
+</div>
+
+<div th:if="${name != null}">
+    <h2>Login Successful</h2>
+
+    <p>
+        Name:
+        <span th:text="${name}"></span>
+    </p>
+
+    <p>
+        Username:
+        <span th:text="${login}"></span>
+    </p>
+
+    <a href="/logout">Logout</a>
+</div>
+
+</body>
+</html>
